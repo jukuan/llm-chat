@@ -9,6 +9,7 @@
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#e95420" />
 
+  <link rel="preconnect" href="https://assets.ubuntu.com" />
   <link rel="stylesheet"
         href="https://assets.ubuntu.com/v1/vanilla-framework-version-4.21.0.min.css" />
   <link rel="stylesheet" href="/app.css" />
@@ -20,9 +21,12 @@
 
 <header class="app-header">
   <div class="shell header-row">
-    <div>
-      <h1 data-i18n="appTitle">Family House Assistant</h1>
-      <p data-i18n="appSubtitle">Ask about the house — appliances, rules, chores, WiFi, where things are kept.</p>
+    <div class="brand">
+      <div class="brand-icon">🏠</div>
+      <div>
+        <h1 data-i18n="appTitle">Family House Assistant</h1>
+        <p data-i18n="appSubtitle">Ask about the house — appliances, rules, chores, WiFi.</p>
+      </div>
     </div>
     <div class="lang-toggle" id="langToggle">
       <button type="button" data-lang="en" data-i18n="langEn">EN</button>
@@ -53,42 +57,48 @@
 
   <!-- ================= CHAT TAB ================= -->
   <div class="tab-panel" data-panel="chat">
-    <div class="chat-actions">
-      <button type="button" class="p-button" id="clearChat" data-i18n="clearChat">Clear chat</button>
+    <div class="chat-shell">
+
+      <div class="chat-toolbar">
+        <span class="status-pill" id="status" data-i18n="statusReady">Ready.</span>
+        <button type="button" class="ghost-btn" id="clearChat" data-i18n="clearChat">Clear chat</button>
+      </div>
+
+      <div class="chat-log" id="log"></div>
+
+      <div class="composer">
+        <textarea id="input" data-i18n-placeholder="placeholder"
+                  placeholder="Type a message…" rows="1"></textarea>
+        <button type="button" class="send-btn" id="send" aria-label="Send">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+
     </div>
-
-    <div class="chat-log" id="log"></div>
-
-    <div class="composer">
-      <textarea id="input" data-i18n-placeholder="placeholder"
-                placeholder="Type a message…"></textarea>
-      <button type="button" class="p-button--positive" id="send" data-i18n="send">Send</button>
-    </div>
-
-    <p class="meta" id="status" data-i18n="statusReady">Ready.</p>
   </div>
 
   <!-- ================= CONTEXT TAB ================= -->
   <div class="tab-panel" data-panel="context" hidden>
-    <div class="context-toolbar">
-      <button type="button" class="mode-toggle is-active" data-mode="form" data-i18n="viewForm">Form</button>
-      <button type="button" class="mode-toggle"           data-mode="raw"  data-i18n="viewRaw">Raw</button>
-    </div>
-
-    <div id="contextForm" class="context-form"></div>
-
-    <div id="contextRaw" class="context-raw" hidden>
+    <div class="context-raw">
       <div class="raw-sidebar">
-        <button type="button" class="p-button--positive" id="newFileBtn" data-i18n="newFile">+ New file</button>
+        <div class="sidebar-head">
+          <span class="sidebar-title">📂 Files</span>
+          <button type="button" class="icon-btn" id="newFileBtn" title="New file">+</button>
+        </div>
         <div id="fileList" class="file-list"></div>
       </div>
       <div class="raw-editor">
         <div class="editor-header">
-          <input type="text" id="fileName" data-i18n-placeholder="filenamePlaceholder" />
-          <button type="button" class="p-button--positive" id="saveFileBtn" data-i18n="save">Save</button>
-          <button type="button" class="p-button--negative" id="deleteFileBtn" data-i18n="delete">Delete</button>
+          <input type="text" id="fileName" data-i18n-placeholder="filenamePlaceholder"
+                 placeholder="filename.md" />
+          <button type="button" class="primary-btn" id="saveFileBtn" data-i18n="save">Save</button>
+          <button type="button" class="danger-btn"  id="deleteFileBtn" data-i18n="delete">Delete</button>
         </div>
-        <textarea id="fileContent"></textarea>
+        <textarea id="fileContent" spellcheck="false"></textarea>
         <p class="meta" id="editorStatus"></p>
       </div>
     </div>

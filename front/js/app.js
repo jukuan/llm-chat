@@ -229,4 +229,6 @@ if ('serviceWorker' in navigator) {
     // Context loads lazily when the tab is opened, but load once now so the
     // first "Other files" list is populated.
     ctx.loadForm().catch(() => {});
+
+    ctx.loadFileList().catch(() => {});
 })();

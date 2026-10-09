@@ -1,18 +1,14 @@
-# Go build output
-bin/
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
 *.exe
 *.test
 *.out
 
-# Local env
 server/.env
 server/context/*.md
 
 # Runtime data
 server/data/
-
-# Editor / OS
-.idea/
-.vscode/
-*.swp
-.DS_Store

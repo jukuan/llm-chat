@@ -9,7 +9,7 @@
 //   - /api/*: never cached — always live
 //   - third-party (CDN): passthrough, no caching
 
-const CACHE = 'house-chat-v1';
+const CACHE = 'house-chat-v1.1.1';
 
 const SHELL = [
   '/',
