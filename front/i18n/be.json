@@ -1,0 +1,40 @@
+{
+  "appTitle": "Сямейны памочнік",
+  "appSubtitle": "Спытай пра дом — тэхніку, правілы, хатнія справы, Wi-Fi, дзе што ляжыць.",
+  "tabChat": "Чат",
+  "tabContext": "Кантэкст",
+
+  "roleFather": "Тата",
+  "roleMother": "Мама",
+  "roleKid": "Дзіця",
+
+  "modelLabel": "Мадэль",
+
+  "send": "Даслаць",
+  "stop": "Стоп",
+  "placeholder": "Напішы паведамленне…  (Enter — даслаць, Shift+Enter — новы радок)",
+  "clearChat": "Ачысціць чат",
+  "clearChatConfirm": "Ачысціць гэты чат?",
+
+  "statusReady": "Гатова.",
+  "statusThinking": "Думаю…",
+  "statusSwitched": "Пераключыўся на",
+  "statusCleared": "Чат ачышчаны.",
+  "statusSavedTo": "Захавана ў",
+  "statusModelSet": "Мадэль:",
+  "statusSaveFailed": "Не ўдалося захаваць:",
+
+  "offlineBanner": "Чакаем тату дадому 🏠",
+  "offlinePlaceholder": "Чат недаступны, пакуль ноўтбук не вернецца.",
+
+  "sectionNew": "+ Новы файл",
+  "sectionSave": "Захаваць",
+  "sectionDelete": "Выдаліць",
+  "sectionFilename": "файл.md",
+  "sectionHint": "Пішы простымі словамі. Пераносы радкоў захоўваюцца.",
+  "sectionSaved": "Захавана ў",
+  "sectionEmpty": "Пакуль няма файлаў. Націсні “+ Новы файл”.",
+
+  "langEn": "EN",
+  "langBe": "BE"
+}

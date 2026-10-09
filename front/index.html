@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Family House Assistant</title>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#e95420" />
+
+  <link rel="stylesheet"
+        href="https://assets.ubuntu.com/v1/vanilla-framework-version-4.21.0.min.css" />
+  <link rel="stylesheet" href="/app.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="shell header-row">
+    <div>
+      <h1 data-i18n="appTitle">Family House Assistant</h1>
+      <p data-i18n="appSubtitle">Ask about the house — appliances, rules, chores, WiFi, where things are kept.</p>
+    </div>
+    <div class="lang-toggle" id="langToggle">
+      <button type="button" data-lang="en" data-i18n="langEn">EN</button>
+      <button type="button" data-lang="be" data-i18n="langBe">BE</button>
+    </div>
+  </div>
+</header>
+
+<div id="offlineBanner" class="offline-banner" hidden></div>
+
+<main class="shell">
+
+  <div class="role-bar" id="roleBar">
+    <button type="button" data-role="father" data-i18n="roleFather">Father</button>
+    <button type="button" data-role="mother" data-i18n="roleMother">Mother</button>
+    <button type="button" data-role="kid"    data-i18n="roleKid">Kid</button>
+    <span class="spacer"></span>
+    <label for="modelSelect" data-i18n="modelLabel">Model</label>
+    <select id="modelSelect" disabled>
+      <option>…</option>
+    </select>
+  </div>
+
+  <div class="tabs">
+    <button type="button" class="tab is-active" data-tab="chat"    data-i18n="tabChat">Chat</button>
+    <button type="button" class="tab"           data-tab="context" data-i18n="tabContext">Context</button>
+  </div>
+
+  <!-- ================= CHAT TAB ================= -->
+  <div class="tab-panel" data-panel="chat">
+    <div class="chat-actions">
+      <button type="button" class="p-button" id="clearChat" data-i18n="clearChat">Clear chat</button>
+    </div>
+
+    <div class="chat-log" id="log"></div>
+
+    <div class="composer">
+      <textarea id="input" data-i18n-placeholder="placeholder"
+                placeholder="Type a message…"></textarea>
+      <button type="button" class="p-button--positive" id="send" data-i18n="send">Send</button>
+    </div>
+
+    <p class="meta" id="status" data-i18n="statusReady">Ready.</p>
+  </div>
+
+  <!-- ================= CONTEXT TAB ================= -->
+  <div class="tab-panel" data-panel="context" hidden>
+    <div class="context-toolbar">
+      <button type="button" class="mode-toggle is-active" data-mode="form" data-i18n="viewForm">Form</button>
+      <button type="button" class="mode-toggle"           data-mode="raw"  data-i18n="viewRaw">Raw</button>
+    </div>
+
+    <div id="contextForm" class="context-form"></div>
+
+    <div id="contextRaw" class="context-raw" hidden>
+      <div class="raw-sidebar">
+        <button type="button" class="p-button--positive" id="newFileBtn" data-i18n="newFile">+ New file</button>
+        <div id="fileList" class="file-list"></div>
+      </div>
+      <div class="raw-editor">
+        <div class="editor-header">
+          <input type="text" id="fileName" data-i18n-placeholder="filenamePlaceholder" />
+          <button type="button" class="p-button--positive" id="saveFileBtn" data-i18n="save">Save</button>
+          <button type="button" class="p-button--negative" id="deleteFileBtn" data-i18n="delete">Delete</button>
+        </div>
+        <textarea id="fileContent"></textarea>
+        <p class="meta" id="editorStatus"></p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

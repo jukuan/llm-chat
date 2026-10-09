@@ -1,0 +1,40 @@
+{
+  "appTitle": "Family House Assistant",
+  "appSubtitle": "Ask about the house — appliances, rules, chores, WiFi, where things are kept.",
+  "tabChat": "Chat",
+  "tabContext": "Context",
+
+  "roleFather": "Father",
+  "roleMother": "Mother",
+  "roleKid": "Kid",
+
+  "modelLabel": "Model",
+
+  "send": "Send",
+  "stop": "Stop",
+  "placeholder": "Type a message…  (Enter to send, Shift+Enter for newline)",
+  "clearChat": "Clear chat",
+  "clearChatConfirm": "Clear this chat?",
+
+  "statusReady": "Ready.",
+  "statusThinking": "Thinking…",
+  "statusSwitched": "Switched to",
+  "statusCleared": "Chat cleared.",
+  "statusSavedTo": "Saved to",
+  "statusModelSet": "Model set to",
+  "statusSaveFailed": "Save failed:",
+
+  "offlineBanner": "Waiting for the father to come home 🏠",
+  "offlinePlaceholder": "Chat is offline until the laptop is back.",
+
+  "sectionNew": "+ New file",
+  "sectionSave": "Save",
+  "sectionDelete": "Delete",
+  "sectionFilename": "filename.md",
+  "sectionHint": "Write in plain words. Line breaks are kept.",
+  "sectionSaved": "Saved at",
+  "sectionEmpty": "No files yet. Click “+ New file”.",
+
+  "langEn": "EN",
+  "langBe": "BE"
+}
